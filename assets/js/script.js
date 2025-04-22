@@ -493,19 +493,19 @@
 
 
 
-     /*------------------------------------------
-        = POST SLIDER
-    -------------------------------------------*/
-     if ($(".post-slider".length)) {
-         $(".post-slider").owlCarousel({
-             margin: 30,
-             loop: true,
-             nav: true,
-             navText: ['<i class="fi ti-angle-left"></i>', '<i class="fi ti-angle-right"></i>'],
-             dots: false,
-             items: 1
-         });
-     }
+    /*------------------------------------------
+       = POST SLIDER
+   -------------------------------------------*/
+    if ($(".post-slider".length)) {
+        $(".post-slider").owlCarousel({
+            margin: 30,
+            loop: true,
+            nav: true,
+            navText: ['<i class="fi ti-angle-left"></i>', '<i class="fi ti-angle-right"></i>'],
+            dots: false,
+            items: 1
+        });
+    }
 
 
     /*------------------------------------------
@@ -637,6 +637,28 @@
         }, 200));
 
     });
+
+    $(window).on('scroll', function () {
+        if ($(this).scrollTop() > 50) {
+            $('#navbar')
+                .removeClass('bg-transparent')
+                .addClass('bg-white shadow-md');
+
+            $('.nav-title')
+                .removeClass('text-white')
+                .addClass('text-black');
+        } else {
+            $('#navbar')
+                .removeClass('bg-white shadow-md')
+                .addClass('bg-transparent');
+
+            $('.nav-title')
+                .removeClass('text-black')
+                .addClass('text-white');
+        }
+    })
+
+
 
 
 
